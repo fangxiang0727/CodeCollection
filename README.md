@@ -11,15 +11,14 @@ result_save
 main: keep the window for input, cycle the functions
 
 #import
-···
-  import numpy as np
-  import pandas as pd
-  import matplotlib as mlp # use for agg.path.chunksize
-  import os,sys
-  import math
-  from nptdms import TdmsFile
-  from matplotlib import pyplot as plt
-···
+import numpy as np
+import pandas as pd
+import matplotlib as mlp # use for agg.path.chunksize
+import os,sys
+import math
+from nptdms import TdmsFile
+from matplotlib import pyplot as plt
+
 
 #-----------read data--------------------
 DataX=pd.read_csv('FileName.csv') #read data via pandas
