@@ -1,16 +1,16 @@
-# CodeCollectionForCalculation
+# CodeCollectionForCalculation #
 collect the high-frequency codes for calculation program
 
-#brief structure
-imoprt
-read
-pre-cessor
-calculation
-suf-cessor
-result_save
-main: keep the window for input, cycle the functions
+## brief structure ##
+### imoprt
+### read
+### pre-cessor
+### calculation
+### suf-cessor
+### result_save
+### main
 
-#import
+### import ###
 import numpy as np
 import pandas as pd
 import matplotlib as mlp # use for agg.path.chunksize
@@ -20,7 +20,7 @@ from nptdms import TdmsFile
 from matplotlib import pyplot as plt
 
 
-#-----------read data--------------------
+### read data ###
 DataX=pd.read_csv('FileName.csv') #read data via pandas
 
 TdFile=TdmsFile('FileName.tdms') #read data via TdmsFile, for tdms file, need to figure out the index to know the group/channel info.
