@@ -12,7 +12,11 @@ from matplotlib import pyplot as plt
 DataX=pd.read_csv('FileName.csv') #read data via pandas
 
 TdFile=TdmsFile('FileName.tdms') #read data via TdmsFile, for tdms file, need to figure out the index to know the group/channel info.
-PWM=TdFile.object("PWM","cDAQ2Mod2/ai0").data
+
+TdFile.groups() # use this code to get the group_names of tdmsfile via Print
+TdFile.group_channels('GroupName_1') # get the info of specific channel under specific group via Print
+
+PWM=TdFile.object("PWM","cDAQ2Mod2/ai0").data #get the data from channel
 Analog=TdFile.object("Analog","cDAQ2Mod3/ai0").data*20 
 Angle=TdFile.object("Encoder","cDAQ2Mod3_1/ctr0").data
 
