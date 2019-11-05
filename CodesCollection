@@ -19,7 +19,17 @@ TdFile.group_channels('GroupName_1') # get the info of specific channel under sp
 PWM=TdFile.object("PWM","cDAQ2Mod2/ai0").data #get the data from channel
 Analog=TdFile.object("Analog","cDAQ2Mod3/ai0").data*20 
 Angle=TdFile.object("Encoder","cDAQ2Mod3_1/ctr0").data
-
+#----#
+TdFile=TdmsFile(DataName)
+GroupNames=TdFile.groups()
+ChannelNames=[]
+for Gele in GroupNames:
+    ChName=str(TdFile.group_channels(Gele)).split('\'')
+    ChannelNames.append(ChName[-2])
+PWM=TdFile.object(GroupNames[0],ChannelNames[0]).data
+Analog=TdFile.object(GroupNames[1],ChannelNames[1]).data*20 #AnalogSignal/5*100, change from Voltage to percentage.
+Angle=TdFile.object(GroupNames[2],ChannelNames[2]).data
+#----#
 
 #--------------precessor---------------------
 DataA=pd.DataFrame(DataNdarray)#convert DataNdarray from ndarray to pandas DataFrame.
