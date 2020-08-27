@@ -34,7 +34,7 @@ Angle=TdFile.object(GroupNames[2],ChannelNames[2]).data
 #--------------precessor---------------------
 DataA=pd.DataFrame(DataNdarray)#convert DataNdarray from ndarray to pandas DataFrame.
 DataX.dropna(how='any')#drop the row contains NaN
-DataX.filna(value=0)#replace the NaN with value
+DataX.fillna(value=0)#replace the NaN with value
 DataX=pd.drop([0,1])#dele the row1 and row2
 DataY=DataX.astype('float')# convert the str to float if necessary
 
@@ -78,6 +78,13 @@ plt.show()#show drawing via a pre-defined window with some powerful and useful t
 plt.savefig('./Report/%s.jpg'%DataName)#save the drawing, if there is no File named 'Report',create a new File "Report" under current File.
 np.savetxt('datax.csv',DataX,delimiter=',',header='1,2,3,4,5,6,....')#save the dataX to datax.csv, and add a header for each column,'1,2,3...'divided by delimiter.
 DataX.to_csv('./Report/summary.csv') #save the DataX to a excel.
+
+#save the result as excel, in two different sheets.
+x=pd.DataFrame()
+y=pd.DataFrame()
+with pd.ExcelWriter('Kitty.xlsx') as writer:
+    x.to_excel(writer, sheet_name='Days_SoC2WoE')
+    y.to_excel(writer, sheet_name='kitty')
 
 #---------------------------------------main--------------------------
 if __name__=='__main__':
