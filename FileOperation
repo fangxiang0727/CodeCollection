@@ -1,0 +1,42 @@
+import os 
+import sys 
+import shutil  # for copy operation
+
+#****************************************************************
+#以当前目录为根目录，检索文档下所有文件夹和文件，并选择特定后缀文件生成列表
+def GetSpecifiedFileNameList(Specified_suffix):
+    print(os.getcwd())
+    Sepcified_list_path=[]
+    Sepcified_list=[]
+    for root,dirs,files in os.walk(os.getcwd()):
+        for name in files:
+            if Specified_suffix in name:
+                Sepcified_list_path.append(os.path.join(root, name))#get the path list for specified file
+                Sepcified_list.append(name)#get the name list for specified file
+                continue
+            #print(os.path.join(root, name))
+    print(len(Sepcified_list))
+    print(Sepcified_list_path)
+    print('=======================================================================')
+    print(Sepcified_list)
+    #return Sepcified_list
+GetSpecifiedFileNameList('.xlsx')# run the function.
+#*********************************************************************
+for ele in Sepcified_list_path:
+    shutil.copy('%s'%ele,'pdf')#copy the documents to specified file "pdf"
+for ele in xlsxlist:
+    shutil.copy('%s'%ele,'xlsx')#copy the documents to specified file "xlsx"
+
+#*********************************************************************
+
+#check the xlsx in current file and get the name, expel the "Brenda.xlsx"
+dirlist=os.listdir(os.getcwd())
+targetlist=[]
+for ele in dirlist:
+    if '.xlsx' in ele:
+        targetlist.append(ele)
+if 'Brenda.xlsx' in targetlist:
+    targetlist.remove('Brenda.xlsx')
+if 'Kitty.xlsx' in targetlist:
+    targetlist.remove('Kitty.xlsx')
+#************************************************************************
