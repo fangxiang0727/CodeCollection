@@ -43,6 +43,7 @@ DataX.columns=range(1,n+1)#create the column labels[1,...,n]
 DataX.index=NameList #add the tags for rows. NameList is list type[a,b,c,d,...]
 
 DataX.sort_values(by=[n,n-1],ascending=True)# Mainly sort acc. to column_n ，second sort acc. column_n-1
+DataX=DataX.reset_index(drop=True)# remember to reset the index after sorting the data.
 DataX.drop_duplicates(subset=n,keep='first')# drop acc. to column_n, dele the duplicated rows, keep the first row.
 DataZ[4]=listX# listX is a list like data [1,2,3,...], create the column_4
 DataZ[4]=DataZ[1]+DataZ[2]#create the column_4, and the value is column_1+column_2.  operation including '+ - * / ' is supported; If math module is involved, only number is accepted.
