@@ -48,6 +48,14 @@ DataX.drop_duplicates(subset=n,keep='first')# drop acc. to column_n, dele the du
 DataZ[4]=listX# listX is a list like data [1,2,3,...], create the column_4
 DataZ[4]=DataZ[1]+DataZ[2]#create the column_4, and the value is column_1+column_2.  operation including '+ - * / ' is supported; If math module is involved, only number is accepted.
 
+pd.crosstab 
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.crosstab.html
+
+pd.pivot
+pd.pivot_table
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html
+
+
 listX=5*[0]+listY# [0,0,0,0,0,1,2]=5*[0]+[1,2]
 listC=list(zip(listA,listB))# combine the two list and return a object. convert to list to get a tuple [(a1,b1),(a2,b2),(a3,b3),...]
 listC.append(element)# add element to listC
