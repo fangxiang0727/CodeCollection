@@ -2,6 +2,8 @@ import os
 import sys 
 import shutil  # for copy operation
 
+os.system('copy 1.xlsx 2.xlsx')# create 2.xlsx via copying 1.xlsx
+
 #****************************************************************
 #以当前目录为根目录，检索文档下所有文件夹和文件，并选择特定后缀文件生成列表
 def GetSpecifiedFileNameList(Specified_suffix):
