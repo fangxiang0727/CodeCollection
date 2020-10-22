@@ -1,0 +1,15 @@
+        #调用多行文本框的输入值
+        print(self.textEdit.toPlainText())
+        
+        #调用单行文本框的输入值
+        print(self.lineEdit.text())
+        
+        #调用comobox的当前值
+        print(self.comboBox.currentText())
+        
+        #为combobox赋值， addItem()是单项值，addItems()是多项值而且必须是字符串
+        self.comboBox_year.addItems(['2020','2021','2022','2023','2024'])
+        
+        font可以复用
+        combox的绑定函数不需要带（）
+        
