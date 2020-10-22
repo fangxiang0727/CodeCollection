@@ -1,15 +1,34 @@
-        #调用多行文本框的输入值
-        print(self.textEdit.toPlainText())
+#调用多行文本框的输入值
+print(self.textEdit.toPlainText())
+
+#调用单行文本框的输入值
+print(self.lineEdit.text())
+
+#调用comobox的当前值
+print(self.comboBox.currentText())
+
+#为combobox赋值， addItem()是单项值，addItems()是多项值而且必须是字符串
+self.comboBox_year.addItems(['2020','2021','2022','2023','2024'])
+
+font可以复用
+combox的绑定函数不需要带（）
         
-        #调用单行文本框的输入值
-        print(self.lineEdit.text())
         
-        #调用comobox的当前值
-        print(self.comboBox.currentText())
+#--------main----------------需要定义main对UI函数进行调用
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import test # "test"是UI.py的文件名字
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    ui = test.Ui_MainWindow() #"test"是UI.py的文件名字
+    ui.setupUi(MainWindow)
+    MainWindow.show()    
+    sys.exit(app.exec_())
+    
+#---------将ui文件转化为py代码
+#cmd下运行：
+pyuic5 -o name.py name.ui
         
-        #为combobox赋值， addItem()是单项值，addItems()是多项值而且必须是字符串
-        self.comboBox_year.addItems(['2020','2021','2022','2023','2024'])
         
-        font可以复用
-        combox的绑定函数不需要带（）
         
