@@ -38,6 +38,8 @@ DataX.fillna(value=0)#replace the NaN with value
 DataX=pd.drop([0,1])#dele the row1 and row2
 DataY=DataX.astype('float')# convert the str to float if necessary
 
+DataX=DataX.loc[lambda df: df['key'] ==709600, :]#filter on column 'key' by 709600
+
 DataX.columns[1,2,3]#rename the columns label to [1,2,3]
 DataX.columns=range(1,n+1)#create the column labels[1,...,n]
 DataX.index=NameList #add the tags for rows. NameList is list type[a,b,c,d,...]
