@@ -30,5 +30,8 @@ if __name__ == '__main__':
 pyuic5 -o name.py name.ui
 #cmd下运行:
 pyside2-uic mainwindow.ui -o MainWindow.py
+
+#--------------------打包exe,如果遇到非必要的动态库加载失败可以直接调用 hidden在打包的时候屏蔽
+pyinstaller -F Submit04.py --hidden-import PySide2.QtXml
         
         
