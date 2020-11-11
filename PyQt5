@@ -13,8 +13,7 @@ self.comboBox_year.addItems(['2020','2021','2022','2023','2024'])
 font可以复用
 combox的绑定函数不需要带（）
         
-        
-#--------main----------------需要定义main对UI函数进行调用
+#--------main----------------需要定义main对UI.py函数进行调用
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import test # "test"是UI.py的文件名字
@@ -29,6 +28,7 @@ if __name__ == '__main__':
 #---------将ui文件转化为py代码
 #cmd下运行：
 pyuic5 -o name.py name.ui
-        
+#cmd下运行:
+pyside2-uic mainwindow.ui -o MainWindow.py
         
         
