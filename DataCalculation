@@ -32,6 +32,14 @@ Angle=TdFile.object(GroupNames[2],ChannelNames[2]).data
 #----#
 
 #--------------precessor---------------------
+import re
+a='AA34'
+print('re.split(\'[A-Z]\',a):    ',re.split('[A-Z]',a))#在指定字符右侧插入逗号，并献祭 单个指定字符
+print('re.split(\'[A-Z]+\',a):   ',re.split('[A-Z]+',a))# 在指定同类字符群右侧插入逗号，并献祭 当前同类字符群
+print('re.split(\'([A-Z])\',a):  ',re.split('([A-Z])',a))#在指定同类字符群右侧插入逗号，并保留当前指定字符，在该字符左侧插入一个空字符。
+print('re.split(\'([A-Z]+)\',a): ',re.split('([A-Z]+)',a))#在指定同类字符群右侧插入逗号，并保留当前指定字符群，在该字符群左侧插入一个空字符。
+
+#---------------------------------------------
 DataA=pd.DataFrame(DataNdarray)#convert DataNdarray from ndarray to pandas DataFrame.
 DataX.dropna(how='any')#drop the row contains NaN
 DataX.fillna(value=0)#replace the NaN with value
