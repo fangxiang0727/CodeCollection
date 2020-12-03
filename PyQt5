@@ -10,6 +10,14 @@ print(self.comboBox.currentText())
 #为combobox赋值， addItem()是单项值，addItems()是多项值而且必须是字符串
 self.comboBox_year.addItems(['2020','2021','2022','2023','2024'])
 
+#设定当前值
+self.lineEdit.setText('')
+self.textEdit.clear()
+self.comboBox.setCurrentIndex(0)
+
+#Combox选项切换事件触发
+self.comboBox.currentIndexChanged.connect()
+
 font可以复用
 combox的绑定函数不需要带（）
         
