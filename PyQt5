@@ -20,7 +20,10 @@ self.comboBox.currentIndexChanged.connect()
 
 font可以复用
 combox的绑定函数不需要带（）
-        
+
+#给pushbutton绑定函数，函数使用函数名字，不要带（），否则会直接跳过click操作直接默认运行。
+ui.pushButton.clicked.connect(StartCollection)
+
 #--------main----------------需要定义main对UI.py函数进行调用
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
