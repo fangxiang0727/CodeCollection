@@ -1,3 +1,5 @@
+#调用table中的数值之前，需要确保setItem,比较方便的做法是在TableItem把每个格子都预先添加一个默认值，例如空格或者点，以促进程序自动生成Item
+
 #调用多行文本框的输入值
 print(self.textEdit.toPlainText())
 
